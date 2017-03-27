@@ -1,0 +1,43 @@
+.header {
+  padding-bottom: 64px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3em;
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2em;
+  }
+}
+
+.subtitle {
+  opacity: .5;
+}
+
+.cta-btn {
+  font-size: 1em;
+  padding: 16px 32px;
+  border: none;
+  background-color: white;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 15px -1px white;
+}
+
+.cta-btn span {
+  background: -webkit-linear-gradient(45deg, #36F, #1EE4A6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .2s;
+}
+
+.cta-btn:hover > span {
+  -webkit-filter: brightness(120%);
+    filter: brightness(120%);
+}

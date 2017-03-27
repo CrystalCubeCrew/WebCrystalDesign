@@ -1,0 +1,85 @@
+.navbar {
+  padding: 16px;
+}
+
+.nav-logo {
+  width: 70px;
+  -webkit-filter: drop-shadow(0 0 1px gray);
+  filter: drop-shadow(0 0 1px gray);
+}
+
+.nav-links {
+  float: right;
+  display: inline;
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+}
+
+.nav-links li {
+  display: inline;
+  margin: 0 4px;
+}
+
+.nav-links li a {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-toggle {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, .3);
+  padding: 0 16px 8px 16px;
+  color: white;
+  box-sizing: border-box;
+  border: none;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 400px) {
+  .nav-logo {
+    display: block;
+    margin: 0 auto;
+  }
+  .nav-links {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+    text-align: center;
+  }
+  .nav-links li {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navbar {
+    text-align: center;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-links li {
+    min-width: 100%;
+    display: inline-block;
+    margin: 8px 0;
+  }
+}
+
+.login-btn {
+  background: linear-gradient(45deg, #36F, #1EE4A6);
+}

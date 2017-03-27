@@ -1,0 +1,33 @@
+<template id="app-template">
+  <style>
+    @import url(styles/main.css);
+
+    pre.userInfo {
+      max-width: 100%;
+      overflow: scroll;
+    }
+  </style>
+  <div class="ctn">
+    App
+    <hr>
+    <span id="response"></span>
+    <div id="crystal-ctn"></div>
+    <span id="app-info"></span>
+  </div>
+</template>
+
+<script>
+  function setAppInfo(newInfo) {
+    setTimeout(() => {
+      initCrystal()
+      let root = document.querySelector('c-content').shadowRoot
+
+      let info = root.getElementById('app-info')
+      info.innerHTML = `<pre class="userInfo">${JSON.stringify(newInfo, null, 2)}</pre>`
+
+      let response = root.getElementById('response')
+      response.innerHTML = `Hey there ${newInfo.displayName}! `
+      responsiveVoice.speak(`Hey there ${newInfo.displayName.split(' ')[0]}`, "UK English Female");
+    }, 10)
+  }
+</script>

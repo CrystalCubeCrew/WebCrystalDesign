@@ -1,0 +1,28 @@
+<template id="footer-template">
+  <style>
+    @import url(styles/main.css);
+
+    .footer {
+      color: white;
+      background-color: #000a1a;
+      text-align: center;
+      padding: 16px;
+      box-shadow: 0 0 15px -5px black;
+    }
+
+    .github-logo {
+      width: 30px;
+      -webkit-filter: brightness(10000%);
+        filter: brightness(10000%);
+    }
+  </style>
+
+  <div class="footer">
+    <div class="ctn">
+      <a href="https://github.com/CrystalCubeCrew">
+        <img class="github-logo" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="">
+      </a><br><br>
+      {{ footer }}
+    </div>
+  </div>
+</template>
