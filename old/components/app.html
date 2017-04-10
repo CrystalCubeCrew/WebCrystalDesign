@@ -8,6 +8,7 @@
     }
 
     .log-ctn {
+      display: none;
       position: absolute;
       right: 0;
       top: 0;
@@ -21,10 +22,10 @@
     <hr>
     <span id="response"></span>
     <div id="crystal-ctn"></div>
-    <button onclick="toggleChatBar()">Show</button>
+    <button onclick="toggleChatBar()">Show Messages</button>
 
     <div id="log-ctn" class="log-ctn">
-      <button onclick="toggleChatBar()">Hide</button>
+      <button onclick="toggleChatBar()">Hide Messages</button>
       <h1>Message History</h1>
       <ul id="logs" class="logs">
         <li>Loading messages...</li>

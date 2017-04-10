@@ -6,7 +6,7 @@ var textureLoader = new THREE.TextureLoader();
 var loader = new THREE.JSONLoader();
 var isLoaded = false;
 var action = {}, mixer;
-var activeActionName = 'idle';
+var activeActionName = 'Idle';
 
 var arrAnimations = [
   'Idle',
@@ -43,7 +43,7 @@ function initCrystal () {
   container.appendChild(renderer.domElement);
 
   camera = new THREE.PerspectiveCamera(60, 16/9, 0.1, 1000);
-  camera.position.set(0, 1.2, 2.5);
+  camera.position.set(1.8, 1, 0);
   listener = new THREE.AudioListener();
   camera.add(listener);
 
@@ -59,11 +59,10 @@ function initCrystal () {
     var material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
     ground = new THREE.Mesh(geometry, material);
     scene.add(ground);
-
   });
 
   // loader.load('./models/eva-animated.json', function (geometry, materials) {
-  loader.load('./models/CrystalChanv6.json', function (geometry, materials) {
+  loader.load('./models/CrystalChanv10.json', function (geometry, materials) {
     materials.forEach(function (material) {
       material.skinning = true;
     });
@@ -74,23 +73,57 @@ function initCrystal () {
 
     mixer = new THREE.AnimationMixer(character);
 
-    action.hello = mixer.clipAction(geometry.animations[ 0 ]);
-    action.idle = mixer.clipAction(geometry.animations[ 1 ]);
-    action.run = mixer.clipAction(geometry.animations[ 3 ]);
-    action.walk = mixer.clipAction(geometry.animations[ 4 ]);
+    // action.hello = mixer.clipAction(geometry.animations[ 0 ]);
+    // action.idle = mixer.clipAction(geometry.animations[ 1 ]);
+    // action.run = mixer.clipAction(geometry.animations[ 3 ]);
+    // action.walk = mixer.clipAction(geometry.animations[ 4 ]);
+    // action.walk = mixer.clipAction(geometry.animations[ 4 ]);
+    action.Idle = mixer.clipAction(geometry.animations[0]);
+    action.idle_2 = mixer.clipAction(geometry.animations[1]);
+    action.shrug = mixer.clipAction(geometry.animations[2]);
+    action.Wave = mixer.clipAction(geometry.animations[3]);
+    action.mathAnimation = mixer.clipAction(geometry.animations[4]);
+    action.NewsFeedAnimation = mixer.clipAction(geometry.animations[5]);
+    action.todoAnimation = mixer.clipAction(geometry.animations[6]);
+    action.Dance = mixer.clipAction(geometry.animations[7]);
+    action.Weather = mixer.clipAction(geometry.animations[8]);
+    action.Weather_2 = mixer.clipAction(geometry.animations[9]);
 
-    action.hello.setEffectiveWeight(1);
-    action.idle.setEffectiveWeight(1);
-    action.run.setEffectiveWeight(1);
-    action.walk.setEffectiveWeight(1);
+    // action.hello.setEffectiveWeight(1);
+    // action.idle.setEffectiveWeight(1);
+    // action.run.setEffectiveWeight(1);
+    // action.walk.setEffectiveWeight(1);
+    action.Idle.setEffectiveWeight(1);
+    action.idle_2.setEffectiveWeight(1);
+    action.shrug.setEffectiveWeight(1);
+    action.Wave.setEffectiveWeight(1);
+    action.mathAnimation.setEffectiveWeight(1);
+    action.NewsFeedAnimation.setEffectiveWeight(1);
+    action.todoAnimation.setEffectiveWeight(1);
+    action.Dance.setEffectiveWeight(1);
+    action.Weather.setEffectiveWeight(1);
+    action.Weather_2.setEffectiveWeight(1);
 
-    action.hello.setLoop(THREE.LoopOnce, 0);
-    action.hello.clampWhenFinished = true;
+    // action.hello.setLoop(THREE.LoopOnce, 0);
+    // action.hello.clampWhenFinished = true;
+    action.Wave.setLoop(THREE.LoopOnce, 0);
+    action.Wave.clampWhenFinished = true;
 
-    action.hello.enabled = true;
-    action.idle.enabled = true;
-    action.run.enabled = true;
-    action.walk.enabled = true;
+
+    // action.hello.enabled = true;
+    // action.idle.enabled = true;
+    // action.run.enabled = true;
+    // action.walk.enabled = true;
+    action.Idle.enabled = true;
+    action.idle_2.enabled = true;
+    action.shrug.enabled = true;
+    action.Wave.enabled = true;
+    action.mathAnimation.enabled = true;
+    action.NewsFeedAnimation.enabled = true;
+    action.todoAnimation.enabled = true;
+    action.Dance.enabled = true;
+    action.Weather.enabled = true;
+    action.Weather_2.enabled = true;
 
     scene.add(character);
 
@@ -101,7 +134,7 @@ function initCrystal () {
 
     isLoaded = true;
 
-    action.hello.play();
+    action.Wave.play();
   });
 }
 
@@ -118,7 +151,6 @@ function fadeAction (name) {
 
   from.crossFadeTo(to, 0.3);
   activeActionName = name;
-
 }
 
 function onWindowResize () {
@@ -145,14 +177,12 @@ function onDoubleClick () {
   }
 
   mylatesttap = new Date().getTime();
-
 }
 
 function animate () {
   requestAnimationFrame(animate);
   controls.update();
   render();
-
 }
 
 function render () {
