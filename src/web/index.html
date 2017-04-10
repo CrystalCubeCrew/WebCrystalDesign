@@ -1,0 +1,34 @@
+<!-- WebCrystal Home Page
+Starting point of the WebCrystal web application, an browser-based interface for the CrystalCube platform where users can log in and interact with Crystal-chan in a similar fashion to how they would interact with her on the Cube or the Pocket components. -->
+<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>WebCrystal</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<!-- Add your site or application content here -->
+    <div class="bokeh-underlay"></div>
+		<div id="app">
+			{{ message }}
+		</div>
+
+	</body>
+	<script src="https://unpkg.com/vue@2.2.6"></script>
+	<script>
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		    message: 'Hello Vue!'
+		  }
+		})
+	</script>
+</html>

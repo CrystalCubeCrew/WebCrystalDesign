@@ -1,0 +1,60 @@
+<template id="features-template">
+  <style>
+    @import url(styles/main.css);
+
+    .features {
+      text-align: center;
+      background: linear-gradient(transparent, #123);
+      padding: 16px 0;
+    }
+
+    .fts {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .ft {
+      flex: 1;
+      text-align: center;
+      margin: 0 8px;
+      padding: 16px 0;
+    }
+
+    .ft img { max-width: 100%; }
+
+    @media screen and (max-width: 480px) {
+      .ft {
+        min-width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+
+  <div class="features">
+    <h3>Features</h3>
+    <div class="fts ctn">
+      <div class="ft">
+        <img src="{{ ft1_img }}" alt="{{ ft1_title }}">
+        <br>
+        <h4>{{ ft1_title }}</h4>
+        <br>
+        <small>{{ ft1_description }}</small>
+      </div>
+      <div class="ft">
+        <img src="{{ ft2_img }}" alt="{{ ft2_title }}">
+        <br>
+        <h4>{{ ft2_title }}</h4>
+        <br>
+        <small>{{ ft2_description }}</small>
+      </div>
+      <div class="ft">
+        <img src="{{ ft3_img }}" alt="{{ ft3_title }}">
+        <br>
+        <h4>{{ ft3_title }}</h4>
+        <br>
+        <small>{{ ft3_description }}</small>
+      </div>
+    </div>
+    <p>{{more}}</p>
+  </div>
+</template>
